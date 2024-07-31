@@ -1,0 +1,26 @@
+public class AccessControl {
+    public static void main(String[] args) {
+        
+        String[] suitableCandidates = {"Alice", "Bob", "Charlie"};
+
+        
+        if (args.length != 1) {
+            System.out.println("Usage: java AccessControl <username>");
+            return;
+        }
+        String username = args[0];
+
+        boolean isSuitable = false;
+        for (String candidate : suitableCandidates) {
+            if (candidate.equalsIgnoreCase(username)) {
+                isSuitable = true;
+                break;
+            }
+        }
+        if (isSuitable) {
+            System.out.println("Access granted to Anudip application.");
+        } else {
+            System.out.println("Access denied. You are not a suitable candidate.");
+        }
+    }
+}
